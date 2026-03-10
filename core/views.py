@@ -1,24 +1,39 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
-
-def index(request):
-    question = {
-        "title": "Вопрос 1",
+questions = [
+    {
+        "id": "1",
         "text": "Столица Франции?",
         "answers": ["Париж", "Москва", "Мадрид", "Нью-Йорк"],
-        "corect": "Париж"
+        "correct": "Париж"
+    },
+    {
+        "id": "2",
+        "text": "Столица России?",
+        "answers": ["Санкт-Петербург", "Москва", "Мадрид", "Владивосток"],
+        "correct": "Москва"
+
     }
 
-    context = {"question": question}
+]
+
+def question(request, question_index = 0):
+    current_question = questions[question_index]
+
+    next_question_index = question_index + 1
+
+    context = {
+        "question": current_question,
+        "next_question_index": next_question_index
+    }
 
     if request.method == "POST":
         user_answer = request.POST.get("answer")
-        if user_answer == question["corect"]:
+        if user_answer == current_question["correct"]:
             context["result"] = "Правильно!!!"
         else:
-            context["result"] = f"Неправильно. Правильный ответ: {question["corect"]}"
+            context["result"] = f"Неправильно. Правильный ответ: {current_question["correct"]}"
 
     return render(request, "index.html", context )
 
