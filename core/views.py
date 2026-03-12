@@ -21,17 +21,27 @@ questions = [
 def question(request, question_index = 0):
     current_question = questions[question_index]
 
+    if question_index == 0:
+        request.session['score'] = 0
+
+    current_score = request.session.get('score', 0)
+
     next_question_index = question_index + 1
 
     context = {
         "question": current_question,
-        "next_question_index": next_question_index
+        "next_question_index": next_question_index,
+        "score": current_score,
     }
 
     if request.method == "POST":
         user_answer = request.POST.get("answer")
         if user_answer == current_question["correct"]:
             context["result"] = "Правильно!!!"
+            new_score = current_score + 1
+
+            request.session['score'] = new_score
+            context['score'] = new_score
         else:
             context["result"] = f"Неправильно. Правильный ответ: {current_question["correct"]}"
 

@@ -28,16 +28,34 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #45a049;
-
         }
+
+        button:disabled {
+            background-color: #cccccc;
+            opacity: 0.7;
+        }
+
 
         .result {
             font-size: 20px;
             font-weight: bold;
             color: #333;
             margin-top: 30px;
+        }
+
+        .score-board {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ffd700;
+            padding: 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #333;
+
         }
     </style>
 </head>
@@ -49,10 +67,10 @@
 
 <form method="POST">
     {% csrf_token %}
-    <button type="submit" name="answer" value="{{ question.answers.0 }}">{{ question.answers.0 }}</button>
-    <button type="submit" name="answer" value="{{ question.answers.1 }}">{{ question.answers.1 }}</button>
-    <button type="submit" name="answer" value="{{ question.answers.2 }}">{{ question.answers.2 }}</button>
-    <button type="submit" name="answer" value="{{ question.answers.3 }}">{{ question.answers.3 }}</button>
+    <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.0 }}">{{ question.answers.0 }}</button>
+    <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.1 }}">{{ question.answers.1 }}</button>
+    <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.2 }}">{{ question.answers.2 }}</button>
+    <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.3 }}">{{ question.answers.3 }}</button>
 </form>
 
 {% if result %}
@@ -61,6 +79,10 @@
         Следующий вопрос
     </a>
 {% endif %}
+
+<div class="score-board">
+    Счёт: {{ score }}
+</div>
 
 </body>
 </html>
