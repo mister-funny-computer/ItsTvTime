@@ -18,10 +18,11 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path
 
-from core.views import  question
+from core.views import question, result
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", question, name="question" ),
-    path("<int:question_index>/", question, name="question")
+    path("<int:question_index>/", question, name="question"),
+    path("result/", result, name="result"),
 ]

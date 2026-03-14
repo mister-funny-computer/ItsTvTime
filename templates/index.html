@@ -75,9 +75,16 @@
 
 {% if result %}
     <p class="result">{{ result }}</p>
-    <a href="/{{ next_question_index }}">
-        Следующий вопрос
-    </a>
+
+    {% if question.id == "2" %}
+        <a href="/result">
+           Перейти к результату
+        </a>
+    {% else %}
+        <a href="/{{ next_question_index }}">
+            Следующий вопрос
+        </a>
+    {% endif %}
 {% endif %}
 
 <div class="score-board">

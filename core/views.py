@@ -47,4 +47,10 @@ def question(request, question_index = 0):
 
     return render(request, "index.html", context )
 
+def result(request):
+    final_score = request.session.get('score', 0)
 
+    context = {
+        "score": final_score,
+    }
+    return render(request, "result.html", context)

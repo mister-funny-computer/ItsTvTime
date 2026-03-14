@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Результат</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            background-color: white;
+            width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333
+        }
+
+        .score {
+            color: #4caf50;
+            font-size: 40px;
+            margin: 20px;
+
+        }
+
+        button {
+            background-color: #2196f3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #1976d2;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Викторина завершена!</h1>
+    <div class="score">
+        {{ score }}
+    </div>
+    <p>Ты ответил правильно на {{ score }} вопросов</p>
+
+    <a href="/">
+        <button>Пройти заново</button>
+    </a>
+</div>
+</body>
+</html>
