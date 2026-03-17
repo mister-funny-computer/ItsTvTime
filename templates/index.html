@@ -4,18 +4,47 @@
     <title>TvTIME!</title>
     <!--<link href="/static/style.css" rel="stylesheet">-->
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #f0f0f0;
             text-align: center;
             padding-top: 50px;
             font-family: Arial, sans-serif;
+            background-image: url(https://avatanplus.com/files/resources/original/5befe82af406b1672122e7f8.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            background-attachment: fixed;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            width: 60%;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
         h1 {
-            color: #333;
+            color: brown;
         }
         h2 {
-            color: #666;
+            color: white;
             margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+            font-size: 24px;
         }
 
         button {
@@ -50,42 +79,44 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            background-color: #ffd700;
+            background-color: rgba(255, 215, 0, 0.8);
             padding: 20px;
             border-radius: 20px;
             font-weight: bold;
             color: #333;
-
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
 <body>
-<h1>Викторина для школьников Взмаха</h1>
+<div class="container">
+    <h1>Викторина для школьников Взмаха</h1>
 
-<h2>{{ question.title }}</h2>
-<h3>{{ question.text }}</h3>
+    <h2>{{ question.text }}</h2>
 
-<form method="POST">
-    {% csrf_token %}
-    <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.0 }}">{{ question.answers.0 }}</button>
-    <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.1 }}">{{ question.answers.1 }}</button>
-    <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.2 }}">{{ question.answers.2 }}</button>
-    <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.3 }}">{{ question.answers.3 }}</button>
-</form>
+    <form method="POST">
+        {% csrf_token %}
+        <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.0 }}">{{ question.answers.0 }}</button>
+        <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.1 }}">{{ question.answers.1 }}</button>
+        <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.2 }}">{{ question.answers.2 }}</button>
+        <button {% if result %}disabled{% endif %} type="submit" name="answer" value="{{ question.answers.3 }}">{{ question.answers.3 }}</button>
+    </form>
 
-{% if result %}
-    <p class="result">{{ result }}</p>
+    {% if result %}
+        <p class="result">{{ result }}</p>
 
-    {% if question.id == "7" %}
-        <a href="/result">
-           Перейти к результату
-        </a>
-    {% else %}
-        <a href="/{{ next_question_index }}">
-            Следующий вопрос
-        </a>
+        {% if question.id == "7" %}
+            <a href="/result">
+                Перейти к результату
+            </a>
+        {% else %}
+            <a href="/{{ next_question_index }}">
+                Следующий вопрос
+            </a>
+        {% endif %}
     {% endif %}
-{% endif %}
+</div>
 
 <div class="score-board">
     Счёт: {{ score }}
