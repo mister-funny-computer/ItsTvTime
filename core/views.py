@@ -43,7 +43,13 @@ questions = [
         "text": "Какой месяц самый короткий в году?",
         "answers": ["Февраль", "Январь", "Сентябрь", "Март"],
         "correct": "Февраль"
-    }
+    },
+    {
+        "id": "8",
+        "text": "Кто автор 'Мойдодыра'?",
+        "answers": ["Чуковский", "Пушкин", "Чайковский", "Маяковский"],
+        "correct": "Чуковский"
+    },
 ]
 
 def question(request, question_index = 0):
@@ -56,10 +62,14 @@ def question(request, question_index = 0):
 
     next_question_index = question_index + 1
 
+    last_question = questions[-1]
+    last_question_id = last_question['id']
+
     context = {
         "question": current_question,
         "next_question_index": next_question_index,
         "score": current_score,
+        "last_question_id": last_question_id,
     }
 
     if request.method == "POST":

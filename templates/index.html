@@ -114,7 +114,7 @@
     {% if result %}
         <p class="result">{{ result }}</p>
 
-        {% if question.id == "7" %}
+        {% if question.id == last_question_id %}
             <a href="/result">
                 Перейти к результату
             </a>
