@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Результат</title>
     <style>
-        * {
+               * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -14,19 +14,37 @@
             background-color: #f0f0f0;
             text-align: center;
             padding-top: 50px;
+            font-family: Arial, sans-serif;
+            background-image: url(https://avatanplus.com/files/resources/original/5befe82af406b1672122e7f8.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            background-attachment: fixed;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
-            background-color: white;
-            width: 400px;
-            margin: 0 auto;
-            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            width: 60%;
+            padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
-
         h1 {
-            color: #333
+            color: brown;
+        }
+        h2 {
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+            font-size: 24px;
         }
 
         .score {

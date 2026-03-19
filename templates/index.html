@@ -49,13 +49,15 @@
 
         button {
             color: white;
-            background-color: #4caf50;
+            background-color: rgba(255, 255, 255, 0.25);
             padding: 15px 30px;
             margin: 10px;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            backdrop-filter: blur(5px);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         button:hover {
@@ -71,8 +73,14 @@
         .result {
             font-size: 20px;
             font-weight: bold;
-            color: #333;
-            margin-top: 30px;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            width: fit-content;
+            margin: 30px auto;
+            border-radius: 15px;
         }
 
         .score-board {
