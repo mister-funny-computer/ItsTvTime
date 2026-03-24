@@ -1,8 +1,9 @@
+<!--{% load static %}-->
 <!DOCTYPE html>
 <html>
 <head>
     <title>TvTIME!</title>
-    <!--<link href="/static/style.css" rel="stylesheet">-->
+    <!--<link href="{% static 'core/css/style.css' %}" rel="stylesheet">-->
     <style>
         * {
             margin: 0;
@@ -102,6 +103,8 @@
     <h1>Викторина для школьников Взмаха</h1>
 
     <h2>{{ question.text }}</h2>
+
+    <img src="/static/{{ question.image_url }}">
 
     <form method="POST">
         {% csrf_token %}

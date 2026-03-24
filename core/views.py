@@ -6,7 +6,8 @@ questions = [
         "id": "1",
         "text": "Столица Франции?",
         "answers": ["Париж", "Москва", "Мадрид", "Нью-Йорк"],
-        "correct": "Париж"
+        "image_url": "core/images/parish.jpg",
+        "correct": "Париж",
     },
     {
         "id": "2",
