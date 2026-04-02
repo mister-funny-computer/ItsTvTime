@@ -1,75 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Результат</title>
-    <style>
-               * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #f0f0f0;
-            text-align: center;
-            padding-top: 50px;
-            font-family: Arial, sans-serif;
-            background-image: url(https://avatanplus.com/files/resources/original/5befe82af406b1672122e7f8.jpg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 100vh;
-            background-attachment: fixed;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            width: 60%;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-        h1 {
-            color: brown;
-        }
-        h2 {
-            color: white;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin-top: 40px;
-            font-size: 24px;
-        }
-
-        .score {
-            color: #4caf50;
-            font-size: 40px;
-            margin: 20px;
-
-        }
-
-        button {
-            background-color: #2196f3;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        button:hover {
-            background-color: #1976d2;
-        }
-
-    </style>
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="container">
@@ -77,11 +13,10 @@
     <div class="score">
         {{ score }}
     </div>
+    <br>
     <p>Ты ответил правильно на {{ score }} вопросов</p>
 
-    <a href="/">
-        <button>Пройти заново</button>
-    </a>
+    <a href="/" class="button">Пройти заново</a>
 </div>
 </body>
 </html>
