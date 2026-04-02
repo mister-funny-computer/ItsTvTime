@@ -13,49 +13,49 @@ questions = [
         "id": "2",
         "text": "Столица России?",
         "answers": ["Санкт-Петербург", "Москва", "Мадрид", "Владивосток"],
-        "image_url": "core/images/Союз не рушимый.jpg",
+        "image_url": "core/images/kreml.jpg",
         "correct": "Москва"
     },
     {
         "id": "3",
         "text": "Какая птица умеет летать задом наперёд?",
         "answers": ["Колибри", "Ворона", "Сокол", "Воробей"],
-        "image_url": "core/images/птици летят.jpg",
+        "image_url": "core/images/bird.jpg",
         "correct": "Колибри"
     },
     {
         "id": "4",
         "text": "Что есть у каждого, но никто не может это потерять?",
         "answers": ["Голова", "Пальцы", "Органы", "Тень"],
-        "image_url": "core/images/тутутутуут.jpg",
+        "image_url": "core/images/spider.jpg",
         "correct": "Тень"
     },
     {
         "id": "5",
         "text": "Какой фрукт самый вонючий?",
         "answers": ["Маракуйя", "Банан", "Дуриан", "Драконий фрукт"],
-        "image_url": "core/images/фрукты.jpg",
+        "image_url": "core/images/fruitss.jpg",
         "correct": "Дуриан"
     },
     {
         "id": "6",
         "text": "Какая нота идёт после МИ?",
         "answers": ["ДО", "ФА", "СОЛЬ", "СИ"],
-        "image_url": "core/images/ноты.jpg",
+        "image_url": "core/images/not.jpg",
         "correct": "ФА"
     },
     {
         "id": "7",
         "text": "Какой месяц самый короткий в году?",
         "answers": ["Февраль", "Январь", "Сентябрь", "Март"],
-        "image_url": "core/images/мвг.jpg",
+        "image_url": "core/images/mesyacy.jpg",
         "correct": "Февраль"
     },
     {
         "id": "8",
         "text": "Кто автор 'Мойдодыра'?",
         "answers": ["Чуковский", "Пушкин", "Чайковский", "Маяковский"],
-        "image_url": "core/images/да мой до дыр.jpg",
+        "image_url": "core/images/moi_da_dir.jpg",
         "correct": "Чуковский"
     },
 ]
