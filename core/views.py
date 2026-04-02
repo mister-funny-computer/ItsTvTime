@@ -13,7 +13,7 @@ questions = [
         "id": "2",
         "text": "Столица России?",
         "answers": ["Санкт-Петербург", "Москва", "Мадрид", "Владивосток"],
-        "image_url": "core/images/Союз не рущимый.jpg",
+        "image_url": "core/images/Союз не рушимый.jpg",
         "correct": "Москва"
     },
     {
