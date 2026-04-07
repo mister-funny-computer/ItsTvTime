@@ -21,6 +21,13 @@ body {
     align-items: center;
 }
 
+.again-btn {
+    margin:15px auto !important;
+    display:block;
+    text-decoration:none;
+    width:fit-content;
+}
+
 .container {
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -29,6 +36,13 @@ body {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.score {
+    margin:15px;
+    font-size:24px;
+    font-weight:800;
+    color:black;
 }
 
 h1 {
